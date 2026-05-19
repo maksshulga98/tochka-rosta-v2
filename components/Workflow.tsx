@@ -34,7 +34,7 @@ const steps = [
 
 export function Workflow() {
   return (
-    <AnimatedSection id="workflow" className="py-20 md:py-28">
+    <AnimatedSection id="workflow" className="py-14 md:py-24 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Как работаем"

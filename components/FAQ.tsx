@@ -102,7 +102,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <AnimatedSection id="faq" className="py-20 md:py-28">
+    <AnimatedSection id="faq" className="py-14 md:py-24 lg:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="FAQ"

@@ -3,7 +3,7 @@ import { AnimatedSection, AnimatedDiv } from "@/components/ui/AnimatedSection";
 
 export function Cooperation() {
   return (
-    <AnimatedSection id="cooperation" className="py-20 md:py-24 bg-brand-bg">
+    <AnimatedSection id="cooperation" className="py-14 md:py-20 lg:py-24 bg-brand-bg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-center">
           <AnimatedDiv>

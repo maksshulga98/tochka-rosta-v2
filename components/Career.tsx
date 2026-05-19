@@ -51,7 +51,7 @@ const roles: Role[] = [
 
 export function Career() {
   return (
-    <AnimatedSection id="career" className="py-16 md:py-20">
+    <AnimatedSection id="career" className="py-12 md:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Карьера" title="Карьера в «Точке роста»" />
         <p className="mt-6 max-w-3xl text-base md:text-lg leading-relaxed text-brand-muted">

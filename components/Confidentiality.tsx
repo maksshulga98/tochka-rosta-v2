@@ -5,7 +5,7 @@ export function Confidentiality() {
   return (
     <AnimatedSection
       id="confidentiality"
-      className="relative py-20 md:py-28 bg-brand-graphite text-white overflow-hidden"
+      className="relative py-14 md:py-24 lg:py-28 bg-brand-graphite text-white overflow-hidden"
     >
       <div
         aria-hidden="true"

@@ -211,7 +211,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden"
+      className="relative pt-24 md:pt-36 pb-14 md:pb-24 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       <div
@@ -279,7 +279,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative w-full">
+          <div className="relative w-full hidden lg:block">
             <HeroComposition />
           </div>
         </div>

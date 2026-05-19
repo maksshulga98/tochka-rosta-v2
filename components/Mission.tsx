@@ -13,7 +13,7 @@ export function Mission() {
   return (
     <AnimatedSection
       id="mission"
-      className="relative py-20 md:py-28 bg-brand-lilac-bg overflow-hidden"
+      className="relative py-14 md:py-24 lg:py-28 bg-brand-lilac-bg overflow-hidden"
     >
       <div
         aria-hidden="true"

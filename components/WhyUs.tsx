@@ -47,7 +47,7 @@ const reasons: Reason[] = [
 
 export function WhyUs() {
   return (
-    <AnimatedSection id="why-us" className="py-20 md:py-28">
+    <AnimatedSection id="why-us" className="py-14 md:py-24 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Почему мы"

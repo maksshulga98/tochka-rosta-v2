@@ -73,7 +73,7 @@ export function TeamApproach() {
   return (
     <AnimatedSection
       id="team"
-      className="py-20 md:py-28 bg-gradient-to-b from-brand-sky-bg/40 to-brand-bg"
+      className="py-14 md:py-24 lg:py-28 bg-gradient-to-b from-brand-sky-bg/40 to-brand-bg"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

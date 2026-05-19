@@ -42,7 +42,7 @@ export function Trust() {
   return (
     <AnimatedSection
       id="trust"
-      className="py-20 md:py-28 bg-brand-sky-bg"
+      className="py-14 md:py-24 lg:py-28 bg-brand-sky-bg"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
