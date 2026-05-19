@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import {
   FileText,
   PenLine,
@@ -31,7 +28,6 @@ interface FloatingCardProps {
   label: string;
   className?: string;
   rotate?: number;
-  delay?: number;
   accent?: "purple" | "blue" | "coral";
 }
 
@@ -46,20 +42,15 @@ function FloatingCard({
   label,
   className,
   rotate = 0,
-  delay = 0,
   accent = "purple",
 }: FloatingCardProps) {
-  const reduce = useReducedMotion();
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, y: 16, rotate: 0 }}
-      animate={{ opacity: 1, y: 0, rotate }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+    <div
+      style={{ transform: `rotate(${rotate}deg)` }}
       className={cn(
         "absolute flex items-center gap-2.5 rounded-2xl bg-white border border-black/5 px-3.5 py-2.5 shadow-[0_12px_30px_rgba(17,24,39,0.08)] whitespace-nowrap",
         className,
       )}
-      style={{ transformOrigin: "center" }}
     >
       <span
         className={cn(
@@ -71,17 +62,14 @@ function FloatingCard({
         <Icon className="w-4 h-4" />
       </span>
       <span className="text-sm font-semibold text-brand-text">{label}</span>
-    </motion.div>
+    </div>
   );
 }
 
 function ChartCard() {
-  const reduce = useReducedMotion();
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, y: 16, rotate: 0 }}
-      animate={{ opacity: 1, y: 0, rotate: -3 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+    <div
+      style={{ transform: "rotate(-3deg)" }}
       className="absolute top-0 right-4 w-[200px] rounded-2xl bg-white border border-black/5 p-4 shadow-[0_20px_40px_rgba(17,24,39,0.08)]"
     >
       <div className="flex items-center justify-between mb-3">
@@ -92,9 +80,7 @@ function ChartCard() {
           Рост
         </span>
       </div>
-      <p className="text-sm font-semibold text-brand-text mb-3">
-        Отчётность
-      </p>
+      <p className="text-sm font-semibold text-brand-text mb-3">Отчётность</p>
       <svg
         viewBox="0 0 160 60"
         className="w-full h-14"
@@ -122,18 +108,19 @@ function ChartCard() {
         <circle cx="160" cy="6" r="4" fill="#6C47FF" />
         <circle cx="160" cy="6" r="2" fill="white" />
       </svg>
-    </motion.div>
+    </div>
   );
 }
 
 function ChecklistCard() {
-  const reduce = useReducedMotion();
-  const items = ["Тексты опубликованы", "Карточки обновлены", "Отзывы обработаны"];
+  const items = [
+    "Тексты опубликованы",
+    "Карточки обновлены",
+    "Отзывы обработаны",
+  ];
   return (
-    <motion.div
-      initial={reduce ? false : { opacity: 0, y: 16, rotate: 0 }}
-      animate={{ opacity: 1, y: 0, rotate: 2 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+    <div
+      style={{ transform: "rotate(2deg)" }}
       className="absolute bottom-0 left-0 w-[220px] rounded-2xl bg-white border border-black/5 p-4 shadow-[0_20px_40px_rgba(17,24,39,0.08)]"
     >
       <div className="flex items-center gap-2.5 mb-3">
@@ -144,7 +131,10 @@ function ChecklistCard() {
       </div>
       <ul className="space-y-2">
         {items.map((item) => (
-          <li key={item} className="flex items-center gap-2 text-xs text-brand-muted">
+          <li
+            key={item}
+            className="flex items-center gap-2 text-xs text-brand-muted"
+          >
             <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-brand-purple/10 text-brand-purple">
               <Check className="w-3 h-3" aria-hidden="true" />
             </span>
@@ -152,7 +142,7 @@ function ChecklistCard() {
           </li>
         ))}
       </ul>
-    </motion.div>
+    </div>
   );
 }
 
@@ -176,7 +166,6 @@ function HeroComposition() {
         label="Контент"
         className="top-[35%] left-[2%]"
         rotate={-4}
-        delay={0.15}
         accent="purple"
       />
       <FloatingCard
@@ -184,7 +173,6 @@ function HeroComposition() {
         label="Тексты"
         className="top-[18%] left-[28%]"
         rotate={3}
-        delay={0.25}
         accent="blue"
       />
       <FloatingCard
@@ -192,7 +180,6 @@ function HeroComposition() {
         label="Соцсети"
         className="top-[44%] right-[6%]"
         rotate={4}
-        delay={0.35}
         accent="coral"
       />
       <FloatingCard
@@ -200,7 +187,6 @@ function HeroComposition() {
         label="Отзывы"
         className="top-[58%] left-[34%]"
         rotate={-3}
-        delay={0.4}
         accent="purple"
       />
       <FloatingCard
@@ -208,7 +194,6 @@ function HeroComposition() {
         label="Карточки товаров"
         className="bottom-[18%] right-[2%]"
         rotate={2}
-        delay={0.45}
         accent="blue"
       />
       <FloatingCard
@@ -216,7 +201,6 @@ function HeroComposition() {
         label="Сообщения"
         className="bottom-[2%] right-[28%]"
         rotate={-2}
-        delay={0.55}
         accent="purple"
       />
     </div>
@@ -224,7 +208,6 @@ function HeroComposition() {
 }
 
 export function Hero() {
-  const reduce = useReducedMotion();
   return (
     <section
       id="hero"
@@ -238,11 +221,7 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-10 items-center">
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <div>
             <p className="text-sm uppercase tracking-wider font-medium text-brand-purple mb-4">
               Маркетинговое агентство
             </p>
@@ -298,7 +277,7 @@ export function Hero() {
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           <div className="relative w-full">
             <HeroComposition />
